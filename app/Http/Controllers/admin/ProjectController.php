@@ -15,7 +15,7 @@ class ProjectController extends Controller
     public function index()
     {
         $titlePage = 'Exercise';
-        $projects = Project::all(2);
+        $projects = Project::all();
         return view('page.exercise', compact('titlePage', 'projects'));
     }
     /**
