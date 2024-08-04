@@ -14,8 +14,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
+        $titlePage = 'Exercise';
         $projects = Project::all();
-        return view('page.exercise', compact('projects'));
+        return view('page.exercise', compact('projects', 'titlePage'));
     }
     /**
      * Show the form for creating a new resource.
