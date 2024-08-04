@@ -15,12 +15,12 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $projects) {
             $projects->id();
             $projects->string('name');
-            $projects->string('lastname');
-            $projects->string('token', 64)->unique();
-            $projects->text('abilities')->nullable();
-            $projects->timestamp('last_used_at')->nullable();
-            $projects->timestamp('expires_at')->nullable();
-            $projects->timestamp('deleted_at')->nullable();
+            $projects->string('last_name');
+            // $projects->string('token', 64)->unique();
+            // $projects->text('abilities')->nullable();
+            // $projects->timestamp('last_used_at')->nullable();
+            // $projects->timestamp('expires_at')->nullable();
+            // $projects->timestamp('deleted_at')->nullable();
             $projects->timestamps();
         });
     }

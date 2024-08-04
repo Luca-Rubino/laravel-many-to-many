@@ -7,7 +7,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/Exercice">Exercise</a>
+                    <a href="/Exercise">Exercise</a>
                 </li>
                 <li>item</li>
                 <li>item</li>

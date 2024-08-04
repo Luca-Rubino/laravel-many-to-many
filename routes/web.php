@@ -17,4 +17,4 @@ use App\Http\Controllers\Admin\ProjectController;
 */
 
 Route::get('/',[IndexController::class,'index'])->name('Home');
-Route::get('/Exercice',[ProjectController::class,'index'])->name('Exercice');
+Route::get('/Exercise',[ProjectController::class,'index'])->name('Exercice');

@@ -21,8 +21,8 @@
                         <th scope="col">#</th>
                         <th scope="col">Title</th>
                         <th scope="col">Type</th>
-                        <th scope="col">Programming Languages</th>
-                        <th scope="col">Actions</th>
+                        {{-- <th scope="col">Programming Languages</th>
+                        <th scope="col">Actions</th> --}}
                     </tr>
                 </thead>
                 @foreach ($projects as $project)
@@ -30,8 +30,8 @@
                         <tr>
                             <td>{{ $project->id }}</td>
                             <td>{{ $project->name }}</td>
-                            <td>{{ $project->type->name }}</td>
-                            <td>{{ $project->prog_langs }}</td>
+                            <td>{{ $project->last_name }}</td>
+                            {{-- <td>{{ $project->prog_langs }}</td> --}}
                             <td>
                                 <a href="{{Route('admin.projects.show', $project)}}" class="btn btn-primary btn-sm me-2 ms-2">Show</a>
                                 <a href="{{Route('admin.projects.edit', $project)}}" class="btn btn-light btn-sm me-2">Edit</a>

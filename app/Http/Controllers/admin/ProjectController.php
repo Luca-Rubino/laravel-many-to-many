@@ -15,8 +15,8 @@ class ProjectController extends Controller
     public function index()
     {
         $titlePage = 'Exercise';
-        $projects = Project::all();
-        return view('page.exercise', compact('projects', 'titlePage'));
+        $projects = Project::all(2);
+        return view('page.exercise', compact('titlePage', 'projects'));
     }
     /**
      * Show the form for creating a new resource.
@@ -25,8 +25,6 @@ class ProjectController extends Controller
     {
         $project = new Project();
         return view('page.exercise', compact('project'));
-        $types = Type::all();
-        return view('admin.projects.create', compact('project', 'types'));
     }
 
     /**
@@ -36,23 +34,22 @@ class ProjectController extends Controller
     {
         $data = $request->validated();
         $newProject = Project::create($data);
-        return redirect()->route('admin.projects.show', $newProject);
+        return redirect()->route('page.exercise', $newProject);
     }
     /**
      * Display the specified resource.
      */
     public function show(Project $project)
     {
-        return view('admin.projects.show', compact('project'));
+        return view('page.exercise', compact('project'));
     }
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
-        $types = Type::all();
-        return view('admin.projects.edit', compact('project', 'types'));
+        $Project = Type::all();
+        return view('page.exercise', compact('project', 'types'));
     }
 
     /**
@@ -62,7 +59,7 @@ class ProjectController extends Controller
     {
         $data = $request->validated();
         $project->update($data);
-        return redirect()->route('admin.projects.show', $project);
+        return redirect()->route('page.exercise', $project);
     }
     /**
      * Remove the specified resource from storage.
@@ -70,6 +67,6 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return redirect()->route('admin.projects.index');
+        return redirect()->route('page.exercise');
     }
 }

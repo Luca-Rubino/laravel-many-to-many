@@ -3,6 +3,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+
 class Project extends Model
 {
     use HasFactory;
@@ -10,11 +11,15 @@ class Project extends Model
 
     protected $fillable = [
         'type_id',
-        'name',
+        'title',
         'prog_langs',
         'due_to',
         'url',
-        'link'
+        'type_id',
+        'title',
+        'prog_langs',
+        'due_to',
+        'url',
     ];
 
     public function type(){
