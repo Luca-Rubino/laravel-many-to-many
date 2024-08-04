@@ -10,10 +10,11 @@ class Project extends Model
 
     protected $fillable = [
         'type_id',
-        'title',
+        'name',
         'prog_langs',
         'due_to',
-        'url'
+        'url',
+        'link'
     ];
 
     public function type(){
