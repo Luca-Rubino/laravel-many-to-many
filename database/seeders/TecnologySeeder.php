@@ -8,34 +8,18 @@ use Faker\Generator as Faker;
 use App\Models\Project;
 use App\Models\Technology;
 
-class TechnologySeeder extends Seeder
+class ProjectTechnologySeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(Faker $faker): void
     {
-        $technologiesData = [
-            [
-                "name" => "Laravel",
-                "color" => "#ff5733"
-            ],
-            [
-                "name" => "Bootstrap",
-                "color" => "#ffbd33"
-            ],
-            [
-                "name" => "Vite",
-                "color" => "#33ffbd"
-            ],
-            [
-                "name" => "Vue",
-                "color" => "#33ff57"
-            ],
-        ];
+        $projects = Project::all();
+        $technologies = Technology::all()->pluck('id');
 
-        foreach ($technologiesData as $technologyData){
-            Technology::create($technologyData);
+        foreach ($projects as $project){
+            $project->technologies()->attach($faker->randomElements($technologies, rand(1,3)));
         }
     }
 }
