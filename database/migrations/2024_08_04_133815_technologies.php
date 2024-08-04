@@ -12,16 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create('technologies', function (Blueprint $technologies) {
-            $technologies->id();
-            $technologies->string('name');
-            $technologies->string('lastname');
-            $technologies->string('token', 64)->unique();
-            $technologies->text('abilities')->nullable();
-            $technologies->timestamp('last_used_at')->nullable();
-            $technologies->timestamp('expires_at')->nullable();
-            $technologies->timestamp('deleted_at')->nullable();
-            $technologies->timestamps();
+        Schema::create('technologies', function (Blueprint $table) {
+            $table->id();
+            $table->string("name")->unique();
+            $table->string("color", 8);
+            $table->timestamps();
         });
     }
 
