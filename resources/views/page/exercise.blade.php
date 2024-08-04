@@ -29,7 +29,7 @@
                     <tbody>
                         <tr>
                             <td>{{ $project->id }}</td>
-                            <td>{{ $project->title }}</td>
+                            <td>{{ $project->name }}</td>
                             <td>{{ $project->type->name }}</td>
                             <td>{{ $project->prog_langs }}</td>
                             <td>
@@ -45,7 +45,7 @@
                     </tbody>
                 @endforeach
             </table>
-            {{ $projects->links()}}
+            {{-- {{ $projects->links()}} --}}
         </div>
     </div>
     @yield('footer')
